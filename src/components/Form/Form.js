@@ -13,6 +13,7 @@ export class Form extends Component {
     e.preventDefault();
     this.props.getContact({ ...this.state, id: uuidv4() });
     this.setState({ name: '', number: '' });
+    
   }
   
   handleNameChange = ({ target: { name, value } }) => {
@@ -33,6 +34,7 @@ export class Form extends Component {
             value={name}
             placeholder="Enter your name"
             onChange={this.handleNameChange}
+            required
           />
         </label>
         <label className={f.label}>
@@ -43,6 +45,7 @@ export class Form extends Component {
             value={number}
             placeholder="Enter your number"
             onChange={this.handleNameChange}
+            required
           />
         </label>
         <button type="submit" className={f.btn}>Add contact</button>
